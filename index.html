@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohamed Ahmed — Front-End Web Developer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    (function () {
+      try {
+        var savedTheme = localStorage.getItem('portfolio-theme');
+        if (!savedTheme) {
+          savedTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        }
+        document.documentElement.setAttribute('data-theme', savedTheme);
+
+        var savedLang = localStorage.getItem('portfolio-lang') || 'en';
+        document.documentElement.setAttribute('lang', savedLang);
+        document.documentElement.setAttribute('dir', savedLang === 'ar' ? 'rtl' : 'ltr');
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER / NAV -->
+  <header class="site">
+    <div class="nav-inner">
+      <a href="#top" class="nav-name">Mohamed<span>.</span>dev</a>
+
+      <nav class="links">
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#stack" data-i18n="nav.stack">Stack</a>
+        <a href="#path" data-i18n="nav.path">Path</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <a class="nav-cta" href="mailto:mido2892006@gmail.com" data-i18n="nav.cta">Say hello</a>
+
+      <div class="nav-tools">
+        <!-- Theme Toggle -->
+        <button class="icon-btn theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark and light theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.6 4.6l1.7 1.7M17.7 17.7l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.6 19.4l1.7-1.7M17.7 6.3l1.7-1.7"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5Z"/></svg>
+        </button>
+
+        <!-- Language Toggle -->
+        <button class="icon-btn lang-toggle" id="langToggle" type="button" aria-label="Switch language">
+          <span id="langToggleLabel">AR</span>
+        </button>
+
+        <!-- Hamburger (Mobile Only) -->
+        <button class="hamburger" id="hamburgerBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-menu-inner">
+        <a class="m-link" href="#about" data-i18n="nav.about">About</a>
+        <a class="m-link" href="#stack" data-i18n="nav.stack">Stack</a>
+        <a class="m-link" href="#path" data-i18n="nav.path">Path</a>
+        <a class="m-link" href="#contact" data-i18n="nav.contact">Contact</a>
+        <a class="m-cta" href="mailto:mido2892006@gmail.com" data-i18n="nav.cta">Say hello</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="hero-glow"></div>
+      <div class="wrap hero-grid">
+        <div class="portrait-frame">
+          <img src="./ChatGPT Image Sep 8, 2026, 06_10_27 PM.png" alt="Portrait of Mohamed Ahmed">
+          <span class="portrait-tag"><em data-i18n="hero.available">Available</em> <span data-i18n="hero.availableSuffix">for junior roles</span></span>
+        </div>
+        <div class="hero-copy">
+          <span class="kicker" data-i18n="hero.kicker">Qalyubia, Egypt</span>
+          <h1>
+            <span data-i18n="hero.name">Mohamed Ahmed</span>
+            <span class="role" data-i18n="hero.role">Front-End Web Developer</span>
+          </h1>
+          <p class="lede" data-i18n="hero.lede">Computer Science student building toward the React ecosystem through Egypt's national DEPI program — turning requirements into interfaces that are clean, accessible, and fast on every screen.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:mido2892006@gmail.com" data-i18n="hero.btnEmail">Email me</a>
+            <a class="btn btn-ghost" href="https://github.com/M0hamed-cloud" target="_blank" rel="noopener" data-i18n="hero.btnGithub">GitHub</a>
+            <a class="btn btn-ghost" href="https://linkedin.com/in/mohamed-ahmed-a2a799354" target="_blank" rel="noopener" data-i18n="hero.btnLinkedin">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 data-i18n="about.heading">About</h2>
+          <span class="count">01</span>
+        </div>
+        <div class="about-grid">
+          <div>
+            <p data-i18n="about.p1">I'm a Computer Science student specializing in front-end engineering, currently training in the React ecosystem through the Digital Egypt Pioneers Initiative. My focus is translating functional requirements into interfaces that hold up: semantic markup, layouts that don't break, and components built to be read by the next person who touches the code.</p>
+            <p data-i18n="about.p2">I like the discipline side of front-end work as much as the visual side — structuring components, writing JavaScript that's easy to follow, and using Git properly instead of as an afterthought.</p>
+          </div>
+          <dl class="about-facts">
+            <div class="fact">
+              <dt data-i18n="about.fact1.k">Based in</dt>
+              <dd data-i18n="about.fact1.v">Qalyubia, Egypt</dd>
+            </div>
+            <div class="fact">
+              <dt data-i18n="about.fact2.k">Studying</dt>
+              <dd data-i18n="about.fact2.v">B.Sc. Computer Science, Thebes Academy — expected June 2028</dd>
+            </div>
+            <div class="fact">
+              <dt data-i18n="about.fact3.k">Training</dt>
+              <dd data-i18n="about.fact3.v">React Front-End track, Digital Egypt Pioneers Initiative (DEPI)</dd>
+            </div>
+            <div class="fact">
+              <dt data-i18n="about.fact4.k">Looking for</dt>
+              <dd data-i18n="about.fact4.v">Junior / trainee front-end opportunities</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- STACK SECTION -->
+    <section id="stack">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 data-i18n="stack.heading">What I work with</h2>
+          <span class="count">02</span>
+        </div>
+        <div class="stack-grid">
+          <div class="stack-cell">
+            <h3 data-i18n="stack.cat1.title">Web technologies</h3>
+            <ul>
+              <li data-i18n="stack.cat1.i1">HTML5 &amp; semantic markup</li>
+              <li data-i18n="stack.cat1.i2">CSS3</li>
+              <li data-i18n="stack.cat1.i3">JavaScript (ES6+)</li>
+              <li data-i18n="stack.cat1.i4">React.js</li>
+              <li data-i18n="stack.cat1.i5">Responsive web design</li>
+              <li data-i18n="stack.cat1.i6">DOM manipulation</li>
+            </ul>
+          </div>
+          <div class="stack-cell">
+            <h3 data-i18n="stack.cat2.title">UI &amp; layout</h3>
+            <ul>
+              <li data-i18n="stack.cat2.i1">Flexbox</li>
+              <li data-i18n="stack.cat2.i2">CSS Grid</li>
+              <li data-i18n="stack.cat2.i3">Mobile-first design</li>
+              <li data-i18n="stack.cat2.i4">Cross-browser compatibility</li>
+            </ul>
+          </div>
+          <div class="stack-cell">
+            <h3 data-i18n="stack.cat3.title">Tools &amp; environment</h3>
+            <ul>
+              <li data-i18n="stack.cat3.i1">Git &amp; GitHub</li>
+              <li data-i18n="stack.cat3.i2">VS Code</li>
+              <li data-i18n="stack.cat3.i3">npm</li>
+              <li data-i18n="stack.cat3.i4">Browser DevTools</li>
+            </ul>
+          </div>
+          <div class="stack-cell">
+            <h3 data-i18n="stack.cat4.title">Core foundations</h3>
+            <ul>
+              <li data-i18n="stack.cat4.i1">Object-oriented programming</li>
+              <li data-i18n="stack.cat4.i2">Data structures fundamentals</li>
+              <li data-i18n="stack.cat4.i3">Problem solving</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PATH SECTION -->
+    <section id="path">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 data-i18n="path.heading">Path so far</h2>
+          <span class="count">03</span>
+        </div>
+        <div class="timeline">
+          <div class="tl-item">
+            <span class="tl-date" data-i18n="path.tl1.date">July 2026 — Present</span>
+            <h3 data-i18n="path.tl1.title">React Front-End Development Track</h3>
+            <div class="org" data-i18n="path.tl1.org">Digital Egypt Pioneers Initiative (DEPI) — MCIT, Egypt</div>
+            <ul>
+              <li data-i18n="path.tl1.li1">Building responsive, user-centric interfaces to modern UI standards.</li>
+              <li data-i18n="path.tl1.li2">Writing modular ES6+ JavaScript and structuring component-driven single-page apps.</li>
+              <li data-i18n="path.tl1.li3">Using Git and GitHub for version control and collaborative development.</li>
+            </ul>
+          </div>
+          <div class="tl-item">
+            <span class="tl-date" data-i18n="path.tl2.date">Expected June 2028</span>
+            <h3 data-i18n="path.tl2.title">Bachelor of Computer Science</h3>
+            <div class="org" data-i18n="path.tl2.org">Thebes Academy, Maadi — Cairo, Egypt</div>
+            <ul>
+              <li data-i18n="path.tl2.li1">Coursework in programming fundamentals, OOP, data structures, and web development basics.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUILDING SECTION -->
+    <section id="building-wrap">
+      <div class="wrap">
+        <div class="building">
+          <div>
+            <h2 data-i18n="building.heading">Still early, still shipping</h2>
+            <p data-i18n="building.p">My project list is growing alongside the DEPI track — new front-end builds land on GitHub as I finish them. It's the fastest way to see how I actually write code.</p>
+          </div>
+          <div class="building-cta">
+            <a class="btn btn-primary" href="https://github.com/M0hamed-cloud" target="_blank" rel="noopener" data-i18n="building.cta">Visit GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <footer id="contact">
+      <div class="wrap">
+        <div class="contact-grid">
+          <div>
+            <h2 data-i18n="contact.heading">Let's talk</h2>
+            <p class="sub" data-i18n="contact.sub">Open to junior and trainee front-end roles, internships, and freelance work. The fastest way to reach me is email.</p>
+          </div>
+          <div class="contact-list">
+            <a class="contact-row" href="mailto:mido2892006@gmail.com">
+              <span class="label" data-i18n="contact.emailLabel">EMAIL</span>
+              <span class="value">mido2892006@gmail.com</span>
+            </a>
+            <a class="contact-row" href="tel:+201063818055">
+              <span class="label" data-i18n="contact.phoneLabel">PHONE</span>
+              <span class="value">+20 106 381 8055</span>
+            </a>
+            <a class="contact-row" href="https://github.com/M0hamed-cloud" target="_blank" rel="noopener">
+              <span class="label" data-i18n="contact.githubLabel">GITHUB</span>
+              <span class="value">github.com/M0hamed-cloud</span>
+            </a>
+            <a class="contact-row" href="https://linkedin.com/in/mohamed-ahmed-a2a799354" target="_blank" rel="noopener">
+              <span class="label" data-i18n="contact.linkedinLabel">LINKEDIN</span>
+              <span class="value">linkedin.com/in/mohamed-ahmed-a2a799354</span>
+            </a>
+          </div>
+        </div>
+        <div class="footnote">
+          <span data-i18n="footer.name">Mohamed Ahmed — Front-End Web Developer</span>
+          <span data-i18n="footer.location">Qalyubia, Egypt</span>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
